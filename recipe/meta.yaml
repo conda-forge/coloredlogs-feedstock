@@ -10,8 +10,7 @@ source:
     sha256: 612354a11acd2e1d603c24fe7be21d736c53a23ad27f244cd9e3fdb4a99661d4
 
 build:
-    number: 0
-    skip: True  # [win]
+    number: 1
     script: python setup.py install --single-version-externally-managed --record record.txt
     entry_points:
         - coloredlogs = coloredlogs.cli:main
@@ -32,7 +31,7 @@ test:
         - coloredlogs --help  # [not osx]
     requires:
         - capturer  # [not win]
-        #- verboselogs
+        - verboselogs
 
 about:
     home: https://coloredlogs.readthedocs.org
