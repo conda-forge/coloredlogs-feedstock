@@ -1,16 +1,16 @@
-{% set version = "5.0" %}
+{% set version = "7.1" %}
 
 package:
     name: coloredlogs
     version: {{ version }}
 
 source:
-    fn: coloredlogs-5.0.tar.gz
+    fn: coloredlogs-{{ version }}.tar.gz
     url: https://pypi.io/packages/source/c/coloredlogs/coloredlogs-{{ version }}.tar.gz
-    sha256: 612354a11acd2e1d603c24fe7be21d736c53a23ad27f244cd9e3fdb4a99661d4
+    sha256: 4f0f2fdb6245bd8507e4d9eafe2ef3a66536de021cf002cc426e394287bac8b9
 
 build:
-    number: 1
+    number: 0
     script: python setup.py install --single-version-externally-managed --record record.txt
     entry_points:
         - coloredlogs = coloredlogs.cli:main
@@ -19,10 +19,11 @@ requirements:
     build:
         - python
         - setuptools
-        - humanfriendly >=1.42
+        - humanfriendly >=3.2
     run:
         - python
-        - humanfriendly >=1.42
+        - humanfriendly >=3.2
+        - colorama  # [win]
 
 test:
     imports:
