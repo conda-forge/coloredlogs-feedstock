@@ -14,14 +14,16 @@ Summary: Colored terminal output for Python's logging module.
 Current build status
 ====================
 
-Linux: [![Circle CI](https://circleci.com/gh/conda-forge/coloredlogs-feedstock.svg?style=shield)](https://circleci.com/gh/conda-forge/coloredlogs-feedstock)
-OSX: [![TravisCI](https://travis-ci.org/conda-forge/coloredlogs-feedstock.svg?branch=master)](https://travis-ci.org/conda-forge/coloredlogs-feedstock)
-Windows: [![AppVeyor](https://ci.appveyor.com/api/projects/status/github/conda-forge/coloredlogs-feedstock?svg=True)](https://ci.appveyor.com/project/conda-forge/coloredlogs-feedstock/branch/master)
+[![Linux](https://img.shields.io/circleci/project/github/conda-forge/coloredlogs-feedstock/master.svg?label=Linux)](https://circleci.com/gh/conda-forge/coloredlogs-feedstock)
+[![OSX](https://img.shields.io/travis/conda-forge/coloredlogs-feedstock/master.svg?label=macOS)](https://travis-ci.org/conda-forge/coloredlogs-feedstock)
+[![Windows](https://img.shields.io/appveyor/ci/conda-forge/coloredlogs-feedstock/master.svg?label=Windows)](https://ci.appveyor.com/project/conda-forge/coloredlogs-feedstock/branch/master)
 
 Current release info
 ====================
-Version: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/coloredlogs/badges/version.svg)](https://anaconda.org/conda-forge/coloredlogs)
-Downloads: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/coloredlogs/badges/downloads.svg)](https://anaconda.org/conda-forge/coloredlogs)
+
+| Name | Downloads | Version | Platforms |
+| --- | --- | --- | --- |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-coloredlogs-green.svg)](https://anaconda.org/conda-forge/coloredlogs) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/coloredlogs.svg)](https://anaconda.org/conda-forge/coloredlogs) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/coloredlogs.svg)](https://anaconda.org/conda-forge/coloredlogs) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/coloredlogs.svg)](https://anaconda.org/conda-forge/coloredlogs) |
 
 Installing coloredlogs
 ======================
