@@ -7,7 +7,7 @@ Package license: MIT
 
 Feedstock license: BSD 3-Clause
 
-Summary: Colored terminal output for Python's logging module.
+Summary: Colored terminal output for Python's logging module
 
 
 
