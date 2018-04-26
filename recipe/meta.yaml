@@ -1,43 +1,43 @@
 {% set version = "9.1" %}
 
 package:
-    name: coloredlogs
-    version: {{ version }}
+  name: coloredlogs
+  version: {{ version }}
 
 source:
-    fn: coloredlogs-{{ version }}.tar.gz
-    url: https://pypi.io/packages/source/c/coloredlogs/coloredlogs-{{ version }}.tar.gz
-    sha256: 6ac9a61034e17e2bb6dcd61e63b6f628ca9302a349ec049d220a76928bc149c7
+  url: https://pypi.io/packages/source/c/coloredlogs/coloredlogs-{{ version }}.tar.gz
+  sha256: 6ac9a61034e17e2bb6dcd61e63b6f628ca9302a349ec049d220a76928bc149c7
 
 build:
-    number: 0
-    script: python setup.py install --single-version-externally-managed --record record.txt
-    entry_points:
-        - coloredlogs = coloredlogs.cli:main
+  number: 1
+  script: python -m pip install --no-deps --ignore-installed .
+  entry_points:
+    - coloredlogs = coloredlogs.cli:main
 
 requirements:
-    build:
-        - python
-        - setuptools
-        - humanfriendly >=3.2
-    run:
-        - python
-        - humanfriendly >=3.2
-        - colorama  # [win]
+  build:
+    - python
+    - pip
+    - humanfriendly >=4.7
+  run:
+    - python
+    - humanfriendly >=4.7
+    - colorama  # [win]
 
 test:
-    imports:
-        - coloredlogs
-    commands:
-        - coloredlogs --help  # [not osx]
+  imports:
+    - coloredlogs
+  commands:
+    - coloredlogs --help  # [not osx]
 
 about:
-    home: https://coloredlogs.readthedocs.org
-    license: MIT
-    summary: "Colored terminal output for Python's logging module."
+  home: https://coloredlogs.readthedocs.org
+  license: MIT
+  license_file: LICENSE.txt
+  summary: Colored terminal output for Python's logging module
 
 extra:
-    recipe-maintainers:
-        - ocefpaf
-        - andfoy
-        - ccordoba12
+  recipe-maintainers:
+    - ocefpaf
+    - andfoy
+    - ccordoba12
