@@ -10,7 +10,7 @@ source:
 
 build:
   number: 1000
-  script: python -m pip install --no-deps --ignore-installed .
+  script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv"
   entry_points:
     - coloredlogs = coloredlogs.cli:main
 
@@ -27,8 +27,9 @@ requirements:
 test:
   imports:
     - coloredlogs
-  commands:
-    - coloredlogs --help  # [not osx]
+# Probably requires a valid TERM and a pager, it is hanging on our CIs.
+#  commands:
+#    - coloredlogs --help  # [not osx]
 
 about:
   home: https://coloredlogs.readthedocs.org
