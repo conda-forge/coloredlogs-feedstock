@@ -9,8 +9,8 @@ source:
   sha256: b869a2dda3fa88154b9dd850e27828d8755bfab5a838a1c97fbc850c6e377c36
 
 build:
-  number: 0
-  script: python -m pip install --no-deps --ignore-installed .
+  number: 1000
+  script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv"
   entry_points:
     - coloredlogs = coloredlogs.cli:main
 
@@ -27,8 +27,9 @@ requirements:
 test:
   imports:
     - coloredlogs
-  commands:
-    - coloredlogs --help  # [not osx]
+# Probably requires a valid TERM and a pager, it is hanging on our CIs.
+#  commands:
+#    - coloredlogs --help  # [not osx]
 
 about:
   home: https://coloredlogs.readthedocs.org
