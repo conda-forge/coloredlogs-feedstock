@@ -1,4 +1,4 @@
-{% set version = "12.0" %}
+{% set version = "14.0" %}
 
 package:
   name: coloredlogs
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/c/coloredlogs/coloredlogs-{{ version }}.tar.gz
-  sha256: 851419d290ff05773b00057248b630578e997a3803a9bb130d70c87707c5b094
+  sha256: a1fab193d2053aa6c0a97608c4342d031f1f93a3d1218432c59322441d31a505
 
 build:
   number: 0
@@ -18,11 +18,10 @@ requirements:
   build:
     - python
     - pip
-    - humanfriendly >=4.7
+    - humanfriendly >=7.1
   run:
     - python
-    - humanfriendly >=4.7
-    - colorama  # [win]
+    - humanfriendly >=7.1
 
 test:
   imports:
