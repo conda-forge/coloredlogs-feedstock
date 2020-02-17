@@ -18,11 +18,10 @@ requirements:
   build:
     - python
     - pip
-    - humanfriendly >=4.7
+    - humanfriendly >=7.1
   run:
     - python
-    - humanfriendly >=4.7
-    - colorama  # [win]
+    - humanfriendly >=7.1
 
 test:
   imports:
