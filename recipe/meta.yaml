@@ -9,7 +9,7 @@ source:
   sha256: a1fab193d2053aa6c0a97608c4342d031f1f93a3d1218432c59322441d31a505
 
 build:
-  number: 0
+  number: 1
   script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv"
   entry_points:
     - coloredlogs = coloredlogs.cli:main
