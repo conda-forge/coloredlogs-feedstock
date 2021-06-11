@@ -1,4 +1,4 @@
-{% set version = "15.0" %}
+{% set version = "15.0.1" %}
 
 package:
   name: coloredlogs
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/c/coloredlogs/coloredlogs-{{ version }}.tar.gz
-  sha256: 5e78691e2673a8e294499e1832bb13efcfb44a86b92e18109fa18951093218ab
+  sha256: 7c991aa71a4577af2f82600d8f8f3a89f936baeaf9b50a9c197da014e5bf16b0
 
 build:
   number: 0
