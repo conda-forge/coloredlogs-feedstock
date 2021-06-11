@@ -18,10 +18,10 @@ requirements:
   host:
     - python
     - pip
-    - humanfriendly >=7.1
+    - humanfriendly >=9.1
   run:
     - python
-    - humanfriendly >=7.1
+    - humanfriendly >=9.1
 
 test:
   imports:
