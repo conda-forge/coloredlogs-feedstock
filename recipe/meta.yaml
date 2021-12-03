@@ -1,40 +1,45 @@
-{% set version = "15.0.1" %}
+{% set name = "coloredlogs" %}
+{% set version = "14.0" %}
+
 
 package:
-  name: coloredlogs
+  name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/c/coloredlogs/coloredlogs-{{ version }}.tar.gz
-  sha256: 7c991aa71a4577af2f82600d8f8f3a89f936baeaf9b50a9c197da014e5bf16b0
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/coloredlogs-{{ version }}.tar.gz
+  sha256: a1fab193d2053aa6c0a97608c4342d031f1f93a3d1218432c59322441d31a505
 
 build:
-  number: 2
-  script: {{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv
+  number: 3
+  noarch: python
   entry_points:
     - coloredlogs = coloredlogs.cli:main
+  script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
-    - python
+    - python >=3.6
     - pip
-    - humanfriendly >=9.1
   run:
-    - python
-    - humanfriendly >=9.1
+    - python >=3.6
+    - humanfriendly >=7.1
 
 test:
   imports:
     - coloredlogs
-# Probably requires a valid TERM and a pager, it is hanging on our CIs.
-#  commands:
-#    - coloredlogs --help  # [not osx]
+    - coloredlogs.converter
+  commands:
+    - pip check
+    - coloredlogs --help
+  requires:
+    - pip
 
 about:
-  home: https://coloredlogs.readthedocs.org
+  home: https://coloredlogs.readthedocs.io
+  summary: Colored terminal output for Python's logging module
   license: MIT
   license_file: LICENSE.txt
-  summary: Colored terminal output for Python's logging module
 
 extra:
   recipe-maintainers:
