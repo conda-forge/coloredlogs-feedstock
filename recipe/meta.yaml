@@ -9,6 +9,7 @@ source:
   sha256: 7c991aa71a4577af2f82600d8f8f3a89f936baeaf9b50a9c197da014e5bf16b0
 
 build:
+  noarch: python
   number: 2
   script: {{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv
   entry_points:
@@ -16,11 +17,11 @@ build:
 
 requirements:
   host:
-    - python
+    - python >=3.7
     - pip
     - humanfriendly >=9.1
   run:
-    - python
+    - python >=3.7
     - humanfriendly >=9.1
 
 test:
