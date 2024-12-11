@@ -5,26 +5,28 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/c/coloredlogs/coloredlogs-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/c/coloredlogs/coloredlogs-{{ version }}.tar.gz
   sha256: 7c991aa71a4577af2f82600d8f8f3a89f936baeaf9b50a9c197da014e5bf16b0
 
 build:
   noarch: python
-  number: 3
+  number: 4
   script: {{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv
   entry_points:
     - coloredlogs = coloredlogs.cli:main
 
 requirements:
   host:
-    - python >=3.7
+    - python {{ python_min }}
     - pip
     - humanfriendly >=9.1
   run:
-    - python >=3.7
+    - python >={{ python_min }}
     - humanfriendly >=9.1
 
 test:
+  requires:
+    - python {{ python_min }}
   imports:
     - coloredlogs
 # Probably requires a valid TERM and a pager, it is hanging on our CIs.
